@@ -3,13 +3,14 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <style>
 
 
         body {
             box-sizing: border-box;
             font-family: Lato, Arial;
-            text-align:center;
+            text-align: center;
             color: #eee;
             background-color: white;
         }
@@ -17,40 +18,47 @@
         a {
             margin-top: 1em;
             margin-bottom: 1em;
-            color: #3366cc;
+            color: #5cb85c;
             font-weight: 400;
             text-align: center;
             letter-spacing: 4px;
         }
-ul.topnav {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
 
-ul.topnav li {float: left;}
+        ul.topnav {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            background-color: #333;
+        }
 
-ul.topnav li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+            ul.topnav li {
+                float: left;
+            }
 
-ul.topnav li a:hover:not(.active) {background-color: #111;}
+                ul.topnav li a {
+                    display: block;
+                    color: white;
+                    text-align: center;
+                    padding: 14px 16px;
+                    text-decoration: none;
+                }
 
-ul.topnav li a.active {background-color: #4CAF50;}
+                    ul.topnav li a:hover:not(.active) {
+                        background-color: #111;
+                    }
 
-ul.topnav li.right {float: right;}
+                    ul.topnav li a.active {
+                        background-color: #4CAF50;
+                    }
 
-
+                ul.topnav li.right {
+                    float: right;
+                }
     </style>
     <title></title>
-    
-    
+
+
 </head>
 <body>
     <ul class="topnav">
@@ -94,7 +102,7 @@ ul.topnav li.right {float: right;}
         @{
             if (Session["KullaniciId"] != null)
             {
-                <a href="/GirisYap/CikisYap">CikisYap</a>
+                <a href="/GirisYap/CikisYap" class="btn btn-danger">CikisYap</a>
                 
             }
             else
@@ -103,6 +111,7 @@ ul.topnav li.right {float: right;}
                 <a href="/KayitOl/">Kayıt ol</a>
             }
         }
+
         @RenderBody()
     </div>
 

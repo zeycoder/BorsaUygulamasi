@@ -13,13 +13,13 @@
         #personel {
             width: 100%;
             font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-            border: 20px solid #505050;
             letter-spacing: 2px;
             text-transform: uppercase;
             text-align: left;
             padding: 6px 6px 6px 12px;
             background: #C1DAD7;
             border-collapse: collapse;
+            margin-bottom:75px;
         }
 
             #personel th {
@@ -47,52 +47,54 @@
 
 <body>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
-    
-    <table id="personel">
-        <h2 style="color:#141014">Onaylanan Paralar</h2>
-        <tr>
-            <th>Kullanıcı Adı</th>
-            <th>Para Miktar</th>
-            
-        </tr>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <div class="container">
+        <table id="personel" class="table">
+            <h2 style="color:#141014">Onaylanan Paralar</h2>
+            <tr>
+                <th>Kullanıcı Adı</th>
+                <th>Para Miktar</th>
 
-        <tbody>
-            @foreach (var paraliste in Model)
-            {
-                <tr>
-                    <td>@paraliste.Kullanicilar.KullaniciAdi</td>
-                    <td>@paraliste.ParaMiktar</td>
-                </tr>
-            }
+            </tr>
 
-        </tbody>
-        
-    </table>
-    <h2 style="color:#141014">Onaylanan Ürünler</h2>
-    <table id="personel">
-        <tr>
-            <th>Kullanıcı Adı</th>
-            <th>Ürün Adı</th>
-            <th>Ürün Miktarı</th>
-            <th>Ürün kg Fiyatı</th>
-            
-        </tr>
-        <tbody>
-            @foreach (var urunliste in ViewBag.Urunler)
-            {
-                <tr>
-                    <td>@urunliste.Kullanicilar.KullaniciAdi </td>
-                    <td>@urunliste.ItemAdi </td>
-                    <td>@urunliste.ItemMiktari </td>
-                    <td>@urunliste.Fiyat </td>
+            <tbody>
+                @foreach (var paraliste in Model)
+                {
+                    <tr>
+                        <td>@paraliste.Kullanicilar.KullaniciAdi</td>
+                        <td>@paraliste.ParaMiktar</td>
+                    </tr>
+                }
 
-                </tr>
+            </tbody>
+
+        </table>
+        <h2 style="color:#141014">Onaylanan Ürünler</h2>
+        <table id="personel" class="table">
+            <tr>
+                <th>Kullanıcı Adı</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Miktarı</th>
+                <th>Ürün kg Fiyatı</th>
+
+            </tr>
+            <tbody>
+                @foreach (var urunliste in ViewBag.Urunler)
+                {
+                    <tr>
+                        <td>@urunliste.Kullanicilar.KullaniciAdi </td>
+                        <td>@urunliste.ItemAdi </td>
+                        <td>@urunliste.ItemMiktari </td>
+                        <td>@urunliste.Fiyat </td>
+
+                    </tr>
 
 
-            }
-        </tbody>
+                }
+            </tbody>
 
-    </table>
+        </table>
+    </div>
 </body>
 </html>
 

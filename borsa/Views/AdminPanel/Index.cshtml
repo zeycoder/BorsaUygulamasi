@@ -16,13 +16,13 @@
         #personel {
             width: 100%;
             font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
-            border: 20px solid #505050;
             letter-spacing: 2px;
             text-transform: uppercase;
             text-align: left;
             padding: 6px 6px 6px 12px;
             background: #C1DAD7;
             border-collapse: collapse;
+            margin-bottom:75px;
         }
 
             #personel th {
@@ -50,56 +50,59 @@
 
 <body>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
-    <h2 style="color:#141014">Para Onay Sayfası</h2>
-    <table id="personel">
-        <tr>
-            <th>Kullanıcı Adı</th>
-            <th>Para Miktar</th>
-            <th>Reddet</th>
-            <th>Onayla</th>
-        </tr>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <div class="container">
+        <h2 style="color:#141014">Para Onay Sayfası</h2>
+        <table id="personel" class="table">
+            <tr>
+                <th>Kullanıcı Adı</th>
+                <th>Para Miktar</th>
+                <th>Reddet</th>
+                <th>Onayla</th>
+            </tr>
 
-        <tbody>
-            @foreach (var paraliste in Model)
-            {
-                <tr>
-                    <td>@paraliste.Kullanicilar.KullaniciAdi</td>
-                    <td>@paraliste.ParaMiktar</td>
-                    <td><a href="/ParaEkle/ParaSil/@paraliste.ParaId" class="btn btn-danger">Reddet</a></td>
-                    <td><a href="/ParaEkle/ONAYLA/@paraliste.ParaId">Onayla</a></td>
-                </tr>
-            }
+            <tbody >
+                @foreach (var paraliste in Model)
+                {
+                    <tr>
+                        <td>@paraliste.Kullanicilar.KullaniciAdi</td>
+                        <td>@paraliste.ParaMiktar</td>
+                        <td><a href="/ParaEkle/ParaSil/@paraliste.ParaId" class="btn btn-danger">Reddet</a></td>
+                        <td><a href="/ParaEkle/ONAYLA/@paraliste.ParaId">Onayla</a></td>
+                    </tr>
+                }
 
-        </tbody>
-       
-    </table>
-    <h2 style="color:#141014">Ürün Onay Sayfası</h2>
-    <table id="personel">
-        <tr>
-            <th>Kullanıcı Adı</th>
-            <th>Ürün Adı</th>
-            <th>Ürün Miktarı</th>
-            <th>Ürün kg Fiyatı</th>
-            <th>Reddet</th>
-            <th>Onayla</th>
-        </tr>
-        <tbody>
-            @foreach (var urunliste in ViewBag.Urunler)
-            {
-                <tr>
-                    <td>@urunliste.Kullanicilar.KullaniciAdi </td>
-                    <td>@urunliste.ItemAdi </td>
-                    <td>@urunliste.ItemMiktari </td>
-                    <td>@urunliste.Fiyat </td>
-                    <td><a href="/ItemAdd/SIL/@urunliste.ItemId" class="btn btn-danger">Reddet</a></td>
-                    <td><a href="/ItemAdd/ONAYLA/@urunliste.ItemId">Onayla</a></td>
+            </tbody>
 
-                </tr>
+        </table>
+        <h2 style="color:#141014">Ürün Onay Sayfası</h2>
+        <table id="personel" class="table">
+            <tr>
+                <th>Kullanıcı Adı</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Miktarı</th>
+                <th>Ürün kg Fiyatı</th>
+                <th>Reddet</th>
+                <th>Onayla</th>
+            </tr>
+            <tbody>
+                @foreach (var urunliste in ViewBag.Urunler)
+                {
+                    <tr>
+                        <td>@urunliste.Kullanicilar.KullaniciAdi </td>
+                        <td>@urunliste.ItemAdi </td>
+                        <td>@urunliste.ItemMiktari </td>
+                        <td>@urunliste.Fiyat </td>
+                        <td><a href="/ItemAdd/SIL/@urunliste.ItemId" class="btn btn-danger">Reddet</a></td>
+                        <td><a href="/ItemAdd/ONAYLA/@urunliste.ItemId">Onayla</a></td>
+
+                    </tr>
 
 
-            }
-        </tbody>
+                }
+            </tbody>
 
-    </table>
+        </table>
+    </div>
 </body>
 </html>
