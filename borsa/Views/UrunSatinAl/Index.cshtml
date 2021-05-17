@@ -1,0 +1,185 @@
+﻿@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+
+
+
+
+        #personel {
+            width: 100%;
+            font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            border: 20px solid #505050;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 6px 6px 6px 12px;
+            background: #C1DAD7;
+            border-collapse: collapse;
+        }
+
+            #personel th {
+                color: #41AA7F;
+                padding: 6px 6px 6px 12px;
+            }
+
+            #personel td {
+                padding: 6px 6px 6px 12px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 300;
+            }
+
+            #personel tr {
+                color: #112233;
+                background: #fff;
+            }
+
+                #personel tr:hover {
+                    background: #202020;
+                    color: #fff;
+                }
+
+
+
+        body {
+            box-sizing: border-box;
+            font-family: Lato, Arial;
+            text-align: center;
+            color: #eee;
+            background-color: white;
+        }
+
+        h2 {
+            margin-top: 1em;
+            margin-bottom: 1em;
+            color: #3366cc;
+            font-weight: 400;
+            text-align: center;
+            font-size: 200%;
+            letter-spacing: 4px;
+        }
+
+        h4 {
+            margin-top: 1em;
+            color: #eee;
+            font-size: 150%;
+            font-weight: 300;
+            text-align: center;
+        }
+
+        button {
+            display: inline;
+            background: #01A4E0;
+            color: #2184AC;
+            border: 0;
+            padding: 4px;
+        }
+
+        input {
+            display: block;
+            width: 98%;
+            height: 30px;
+            margin-top: 1.0em;
+            padding: 4px;
+        }
+
+        .login-box {
+            padding: 1em 1em 1em 1em;
+            margin: auto;
+            text-align: center;
+            display: block;
+            background-color: #6f92dc;
+            /*border: 1px dashed white;*/
+            width: 60%;
+            height: auto;
+        }
+
+        .outer-box {
+            display: block;
+            margin: auto;
+            background: #6f92dc;
+            border-radius: 5px;
+            width: 50%;
+            height: 20em;
+            height: auto;
+        }
+
+        #btn-login {
+            display: block;
+            width: 100%;
+            height: 40px;
+            margin-top: 2.0em;
+            border-radius: 4px;
+            background-color: #3366cc;
+            color: #fff;
+        }
+
+        #btn-forgot {
+            display: block;
+            width: 100%;
+            margin-top: 1.0em;
+            border-radius: 2px;
+            color: #fff;
+            background-color: #000D36;
+        }
+    </style>
+    <title></title>
+
+
+</head>
+<body>
+    <h2>Ürün Satın Al</h2>
+    <div class="outer-box">
+        <div class="login-box">
+
+            <h4 class="login-text">Satın Al</h4>
+            <form action="/UrunSatinAl/SatinAl" method="post">
+                <center>
+                    <input name="UrunAdi" placeholder="Alınacak Ürün">
+                    <input name="UrunMiktar" placeholder="Alınacak Miktar">
+
+                    <button id="btn-login" type="submit">Satın Al</button>
+
+                </center>
+            </form>
+        </div>
+    </div>
+
+
+    @*<h2 style="color:#141014">Onaylanan Ürünler</h2>*@
+    <table id="personel">
+        <tr>
+            @*<th>Kullanıcı Adı</th>
+                <th>Ürün Adı</th>
+                <th>Ürün Miktarı</th>
+                <th>Ürün kg Fiyatı</th>*@
+
+        </tr>
+        <tbody>
+            @*@foreach (var asd in ViewBag.Deneme)
+                {
+                    <tr>
+                        <td>@asd.Kullanicilar.KullaniciAdi </td>
+                        <td>@asd.ItemAdi </td>
+                        <td>@asd.ItemMiktari </td>
+                        <td>@asd.Fiyat </td>
+                    </tr>
+
+
+                }*@
+        </tbody>
+
+    </table>
+
+    </table>
+
+</body>
+</html>
+

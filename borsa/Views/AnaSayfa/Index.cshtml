@@ -1,0 +1,99 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>www.yazilimkodlama.com</title>
+    <style>
+        #personel {
+            width: 100%;
+            font: bold 1.25em "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+            border: 20px solid #505050;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            text-align: left;
+            padding: 6px 6px 6px 12px;
+            background: #C1DAD7;
+            border-collapse: collapse;
+        }
+
+            #personel th {
+                color: #41AA7F;
+                padding: 6px 6px 6px 12px;
+            }
+
+            #personel td {
+                padding: 6px 6px 6px 12px;
+                font-family: 'Montserrat', sans-serif;
+                font-weight: 300;
+            }
+
+            #personel tr {
+                color: #112233;
+                background: #fff;
+            }
+
+                #personel tr:hover {
+                    background: #202020;
+                    color: #fff;
+                }
+    </style>
+</head>
+
+<body>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:100,300" rel="stylesheet">
+    
+    <table id="personel">
+        <h2 style="color:#141014">Onaylanan Paralar</h2>
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Para Miktar</th>
+            
+        </tr>
+
+        <tbody>
+            @foreach (var paraliste in Model)
+            {
+                <tr>
+                    <td>@paraliste.Kullanicilar.KullaniciAdi</td>
+                    <td>@paraliste.ParaMiktar</td>
+                </tr>
+            }
+
+        </tbody>
+        
+    </table>
+    <h2 style="color:#141014">Onaylanan Ürünler</h2>
+    <table id="personel">
+        <tr>
+            <th>Kullanıcı Adı</th>
+            <th>Ürün Adı</th>
+            <th>Ürün Miktarı</th>
+            <th>Ürün kg Fiyatı</th>
+            
+        </tr>
+        <tbody>
+            @foreach (var urunliste in ViewBag.Urunler)
+            {
+                <tr>
+                    <td>@urunliste.Kullanicilar.KullaniciAdi </td>
+                    <td>@urunliste.ItemAdi </td>
+                    <td>@urunliste.ItemMiktari </td>
+                    <td>@urunliste.Fiyat </td>
+
+                </tr>
+
+
+            }
+        </tbody>
+
+    </table>
+</body>
+</html>
+
+
